@@ -25,6 +25,10 @@ angular.module('bootstrap.fileField',[])
           fileField.attr('accept', attrs.accept);
         }
 
+        if (attrs.capture) {
+          fileField.attr('capture', attrs.capture);
+        }
+
         fileField.bind('change', function(event){
             scope.$evalAsync(function () {
               ngModel.$setViewValue(event.target.files[0]);
